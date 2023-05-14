@@ -1,0 +1,175 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2f363e;
+}
+.container
+{
+    position:relative;
+    background: #0a0b0e;
+    min-height: 50px;
+    border-radius: 20px;
+    border-top-left-radius: 225px;
+    border-top-right-radius: 225px;
+    box-shadow: 5px 25px 75px rgba(22, 27, 34, 0.75),
+                10px 10px 70px rgba(12, 14, 10, 0.25),
+                inset 5px 5px 10px rgba(3, 3, 3, 0.5),
+                inset 5px 5px 20px rgba(10, 10, 10, 0.2),
+                inset -5px -5px 15px rgba(2, 3, 1, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.clock
+{
+    position: relative;
+    width: 450px;
+    height: 450px;
+    background: #2f363e;
+    border-radius: 50%;
+    box-shadow: 10px 50px 70px rgba(106, 143, 245, 0.25),
+                inset 5px 5px 10px rgba(38, 204, 233, 0.5),
+                inset 5px 5px 20px rgba(39, 71, 247, 0.2),
+                inset -5px -5px 15px rgba(29, 87, 245, 0.75);
+    display: flex;
+    justify-content: center; /*for main axis alignment-horizontal*/
+    align-items: center; /*for cross axis alignment-vertical*/
+    margin-bottom: 30px;
+           
+}
+.clock::before{ /* selector inserts something before the content of each selected element(s)*/
+content: '';
+position: absolute;
+width: 8px;
+height: 8px;
+background-color: #2f363e;
+border: 3px solid #fff;
+border-radius: 50%;
+z-index: 10;
+}
+.clock span{
+    position: absolute;
+    inset: 20px; /*top-left-right-bottom*/
+    color: #fff;
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i))); /*custom properties that contain a value that can be used in other declarations using the var() function*/
+    /*360/12=30deg*/
+}
+.clock span b{
+    font-size: 2em; /*em-italic-emphasized text*/
+    opacity: 0.25;
+    font-weight: 600;
+    display:inline-block ; /*does not add a line-break after the element, so the element can sit next to other elements*/
+    transform: rotate(calc(-30deg * var(--i)));
+}
+.circle{
+    position: absolute;
+    width:300px;
+    height: 300px;
+    border:2px solid rgba(20, 43, 148, 0.842);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;/*Items are positioned at the beginning of the container*/
+    z-index:9 ;
+}
+.circle i{
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    background: var(--clr);
+    opacity: 0.75;
+    transform-origin: bottom;
+    transform: scaleY(0.5);/*increases or decreases the size of an element */
+    
+}
+.circle:nth-child(1) i{
+    width:2px
+}
+.circle:nth-child(2) i{
+    width:6px
+}
+.circle2{  
+    width: 240px;
+    height: 240px;
+    z-index: 9; /*stack order of an element.*/
+}
+.circle3
+{
+    width: 180px;
+    height: 180px;
+}
+
+.circle::before{
+    content: ''; /*The content property is used to insert generated content.*/
+    position: absolute;
+    top: -8.5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background:var(--clr);
+    box-shadow: 0 0 20px var(--clr), /*[horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
+                0 0 60px var(--clr);
+}
+
+/*digital clock*/
+
+#time{
+    margin-bottom: 40px;
+    display: flex;
+    padding: 10px 20px;
+    font-size: 2em;
+    font-weight: 600;
+    border: 2px solid rgba(15, 243, 232, 0);
+    border-radius: 40px;
+    box-shadow: 5px 5px 10px rgba(11, 34, 238, 0.5),
+    inset 5px 5px 20px rgba(92, 147, 202, 0.829);
+    background-color: rgb(41, 72, 248);
+                       
+}
+#time div{
+    position: relative; /*Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position*/
+    width:60px;
+    text-align: center;
+    font-weight: 500;
+    color:var(--clr);
+}
+#time div:nth-child(1)::after,  /*CSS pseudo-class selector that allows you to select elements based on their index (source order) inside their container*/
+#time div:nth-child(2)::after{
+content: ':';
+position:absolute; /*the element is positioned absolutely to its first positioned parent(with left,top,bottom,right to window*/
+right:-4px;
+}
+#time div:last-child{
+    font-size: 0.5em; /* 
+    0.5 times the size of the current font*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    
+}
+#time div:nth-child(2)::after{
+    animation: animate 1s steps(1) infinite;
+}
+@Keyframes animate{  /*rule specifies the animation code*/
+    0%
+    {  /*animation duration*/
+        opacity:1;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+}

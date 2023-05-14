@@ -1,0 +1,220 @@
+<!DOCTYPE html><!-- to know about the version of html-->
+<html lang="en">
+    <head>
+        <!--vh->viewport(occupies heigth of browser)-->
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            section{
+                width:100%;
+                height: 100vh; 
+                background:url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.alamy.com%2Fblue-party-invitation-background-abstract-delicate-light-blue-turquoise-pink-bokeh-texture-with-stars-beautiful-backdrop-for-design-of-invitation-fo-image455859844.html&psig=AOvVaw0RTGpOxyxUrFEOzB5-1FXP&ust=1676985803191000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLijnouZpP0CFQAAAAAdAAAAABAF.png') ;
+                background-size: cover;
+                opacity: 0.5 ;
+            }
+            section.leftBox{
+                width: 50%;
+                height: 100%;
+                float: left;
+                padding: 50px;
+                box-sizing: border-box;
+            }
+            /*background of left section*/
+            section.leftBox.bg{
+                color: #fff;
+                background:rgba(0, 0, 0, 0.5);
+                padding: 40px;
+                transition: .5s;
+            }
+            /* Styling the hover effect 
+            of left floating section */
+            section.leftBox.content:hover{
+                background: #e91e63;
+            }
+            /* Styling the header of left
+            floating section */
+            section .leftBox .content h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 50px;
+            text-transform: uppercase;
+            }
+            /* Styling the paragraph of
+            left floating section */
+            section.leftBox.content p {
+            margin: 10px 0 0;
+            padding: 0;
+        }
+        /* Styling the right events section */
+        section .events {
+            position: relative;
+            width: 50%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            float: right;
+            box-sizing: border-box;
+        }
+        section.events ul{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        section.events ul li{
+            list-style:none;
+            background: #fff;
+            box-sizing: border-box;
+            height: 200px;
+            margin: 15px 0;
+        }
+        section.events ul li.time{
+            position: relative;
+            padding: 20px;
+            background: #262626;
+            box-sizing: border-box;
+            width: 30%;
+            height: 100%;
+            float: left;
+            text-align: center;
+            transform: .5s;
+        }
+        section .events ul li:hover .time {
+            background: #e91e63;
+        }
+        section.events ul li.time h2{
+            position: absolute;
+            margin:0;
+            padding: 0;
+            top:50%;
+            left:50%;
+            transition: translate(-50%,-50%);
+            color: #fff;
+            font-size: 60px;
+            line-height: 30px;
+        }
+        section.events ul li.details{
+            padding: 20px;
+            background: #fff;
+            box-sizing: border-box;
+            width: 70%;
+            height: 100%;
+            float: left;
+        }
+        section .events ul li .time h2 span {
+            font-size: 30px;
+        }
+        section.events ul li.details h3{
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+        section.events ul li.details p{
+            position: relative;
+            margin: 10px 0 0;
+            padding: 0;
+            font-size: 16px;
+        }
+        section.events ul li.details a{
+            display: inline-block; /*can set height & width values*/
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1.5px solid #262626;
+            margin-top: 8px;
+            font-size: 18px;
+            transition: .5s;
+        }
+        section.events ul li.dtails a:hover{
+            background: #e91e63;
+            color: #fff;
+            border: #e91e63;
+        }
+
+        </style>
+    </head>
+    <body>
+        <section>
+            <div class="leftBox">
+                <div class="bg">
+                    <h1>
+                        Events and shows
+                    </h1>
+                    <p>
+                        Events, meetings and other activities are very effective communication tools both at an internal and external level.
+They enable and foster interpersonal relationships.
+They improve motivation and working mood.
+They reward achievements and recognize success.Hunt down local, live music shows at restaurants on the weekend, find a YouTube concert video, 
+or go to a student band concert. If your campus allows in-person sporting events, attend as many as you feel comfortable with. Attending them at your school, is fun and usually free.2
+                    </p>
+                </div>
+            </div>
+            <div class="events">
+                <ul>
+                    <li>
+                        <div class="time">
+                            <h2>
+                                1<br><span>March</span>
+                            </h2>
+                        </div>
+                        <div class="details">
+                            <h3>
+                                 Where is the event happening?
+                            </h3>
+                          <p> The events will be held at Adhoiyamaan College of Engineering in hosur. 
+                            There will be many events conducted. 
+                        </p> 
+                        <a href="#">View Details</a>
+                        </div>
+                        <div style="clear:both"></div>
+                    </li>
+                    <li>
+                        <div class="time">
+                            <h2>
+                                27 <br><span>May</span>
+                            </h2>
+                        </div>
+                        <div class="details">
+                            <h3>
+                                Where is the event happening?
+                            </h3>
+                             
+    <p>
+        The events will be held at Adhoiyamaan College of Engineering in hosur. 
+        There will be many events conducted. 
+                            </p>
+     
+                            <a href="#">View Details</a>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </li>
+      
+                    <li>
+                        <div class="time">
+                            <h2>
+                                12 <br><span>August</span>
+                            </h2>
+                        </div>
+                        <div class="details">
+                            <h3>
+                                Where is the event happening?
+                            </h3>
+                             
+    <p>
+        The events will be held at Adhoiyamaan College of Engineering in hosur. 
+        There will be many events conducted. 
+                            </p>
+     
+      
+                            <a href="#">View Details</a>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </li>
+               </ul>
+            </div>
+        </section>
+    </body>
+</html>
